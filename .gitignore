@@ -1,0 +1,4 @@
+ubuntu*
+id_rsa*
+.vagrant
+.DS_Store
