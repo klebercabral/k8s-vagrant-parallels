@@ -13,18 +13,18 @@ Vagrant.configure("2") do |config|
         machine.vm.network "private_network", ip: "192.168.33.#{9+machine_id}"
 
         if machine_id == 1
-          machine.vm.provider "parallels" do |vb|
-            vb.cpus = "2"
-            vb.memory = "2048"
-            vb.customize ["set", :id, "--device-del", "sound0"]
+          machine.vm.provider "parallels" do |prl|
+            prl.cpus = "2"
+            prl.memory = "2048"
+            prl.customize ["set", :id, "--device-set", "sound0", "--disable"]
           end
         end
 
         if machine_id > 1
-          machine.vm.provider "parallels" do |vb|
-            vb.cpus = "1"
-            vb.memory = "1024"
-            vb.customize ["set", :id, "--device-del", "sound0"]
+          machine.vm.provider "parallels" do |prl|
+            prl.cpus = "1"
+            prl.memory = "1024"
+            prl.customize ["set", :id, "--device-set", "sound0", "--disable"]
           end
         end
 
