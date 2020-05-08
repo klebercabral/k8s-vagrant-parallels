@@ -16,8 +16,6 @@ Vagrant.configure("2") do |config|
           machine.vm.provider "parallels" do |prl|
             prl.cpus = "2"
             prl.memory = "2048"
-            #only first boot delete sound0
-            prl.customize ["set", :id, "--device-del", "sound0"]
           end
         end
 
@@ -25,8 +23,6 @@ Vagrant.configure("2") do |config|
           machine.vm.provider "parallels" do |prl|
             prl.cpus = "1"
             prl.memory = "1024"
-            #only first boot delete sound0
-            prl.customize ["set", :id, "--device-del", "sound0"]
           end
         end
 
